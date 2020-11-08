@@ -1,13 +1,236 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Rubik&display=swap");
+
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #1b1e1e;
+  color: #fff;
+}
+
+#root {
+  margin-top: 0;
+}
+
+.main_Container {
+  max-width: 1140px;
+  margin: auto;
+  padding: 10px;
+  /* min-height: 100vh; */
+}
+
+.notFoundContainer {
+  width: 100%;
+  margin: 0;
+  /* margin-top: 56px; */
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 76px);
+}
+
+.notFoundContainer h2 {
+  text-align: center;
+  margin-bottom: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.notFoundContainer p {
+  text-align: center;
+  font-size: 14px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.notFoundContainer img {
+  width: 100%;
+  max-width: 80vw;
+  min-height: 250px;
+  margin-top: 20px;
+  max-height: calc(100vh - 300px);
+}
+
+.notFoundContainer .btnNotFound {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 0.7rem 1rem;
+  color: #fff;
+  background-color: rgb(29, 122, 214);
+  border: 0;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  margin-top: 10px;
+}
+
+.notFoundContainer .btnNotFound:hover {
+  background-color: dodgerblue;
+}
+
+.loading {
+  width: 100wv;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #212429;
+}
+
+header {
+  background-color: #212429;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: fixed; */
+  width: 100%;
+  z-index: 100000;
+  font-family: "Rubik", sans-serif;
+}
+
+.nav {
+  height: 56px;
+  width: 100%;
+  color: #fff;
+  position: relative;
+  max-width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.nav a {
+  margin: 0;
+  padding: 0;
+  padding-top: 3px;
+}
+
+.nav > .nav-header {
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.nav > .nav-header > .nav-title {
+  display: flex;
+  font-size: 22px;
+  color: #000;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-title img {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 18px 20px;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-links a img {
+  width: 20px;
+  margin-right: 7px;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: #303030;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .nav > .nav-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 12px;
+  }
+
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 23px;
+    height: 3px;
+    background-color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #212429;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    right: 0px;
+    padding-top: 6px;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+  }
+  .nav > .nav-links > a {
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  .nav > .nav-links > a img {
+    margin-right: 10px;
+  }
+
+  body #root header .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: calc(100vh - 50px);
+    width: 0px;
+  }
+
+  body #root header .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+    width: 250px;
+  }
 }
