@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  z-index: 100;
 }
 
 body {
@@ -19,6 +20,7 @@ body {
   max-width: 1140px;
   margin: auto;
   padding: 10px;
+  padding-top: 66px;
   /* min-height: 100vh; */
 }
 
@@ -84,14 +86,22 @@ body {
 }
 
 header {
-  background-color: #212429;
+  background-color: #21242900;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* position: fixed; */
+  position: fixed;
   width: 100%;
   z-index: 100000;
   font-family: "Rubik", sans-serif;
+}
+
+#bg{
+  width: 100%;
+  min-height: 75vh;
+  object-fit: cover;
+  position: absolute;
+  z-index: -10;
 }
 
 .nav {
@@ -131,6 +141,7 @@ header {
 }
 
 .nav-title img {
+  position: relative;
   width: 30px;
   height: 30px;
   margin: 0;
@@ -165,7 +176,7 @@ header {
 }
 
 .nav > .nav-links > a:hover {
-  background-color: #303030;
+  background-color: #30303044;
 }
 
 .nav > #nav-check {
@@ -200,7 +211,7 @@ header {
     position: absolute;
     display: block;
     width: 100%;
-    background-color: #212429;
+    background-color: #212429ee;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
     top: 50px;
@@ -233,4 +244,9 @@ header {
     overflow-y: auto;
     width: 250px;
   }
+}
+
+
+::-webkit-scrollbar{
+  width: 0;
 }
