@@ -1,5 +1,7 @@
+
 .hero {
-  height: calc(100vh - 76px);
+  position: relative;
+  min-height: calc(100vh - 76px);
   max-height: 700px;
   display: flex;
   flex-flow: row wrap;
