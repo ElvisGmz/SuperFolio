@@ -34,7 +34,7 @@ const NavBar = () => {
     window.onscroll = () => scrollFunction();
 
     if (window.innerWidth <= "600") {
-      container.style.filter = toggleState ? "blur(3px)" : "blur(0px)";
+      container.style.filter = toggleState ? "brightness(30%)" : "brightness(100%)";
       header.style.backgroundColor = toggleState ? "#212429" : "transparent";
 
       navBarMenu.style.cssText = toggleState
