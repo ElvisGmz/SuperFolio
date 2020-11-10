@@ -21,7 +21,11 @@ body {
   margin: auto;
   padding: 10px;
   padding-top: 66px;
-  /* min-height: 100vh; */
+  transition: 0.3s all;
+  -webkit-transition: 0.2s all;
+  -moz-transition: 0.2s all;
+  -ms-transition: 0.2s all;
+  -o-transition: 0.2s all;
 }
 
 .notFoundContainer {
@@ -86,7 +90,7 @@ body {
 }
 
 header {
-  background-color: #21242900;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,6 +98,11 @@ header {
   width: 100%;
   z-index: 100000;
   font-family: "Rubik", sans-serif;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
 }
 
 #bg{
@@ -210,8 +219,8 @@ header {
   .nav > .nav-links {
     position: absolute;
     display: block;
-    width: 100%;
-    background-color: #212429ee;
+    width: 0%;
+    background-color: transparent;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
     top: 50px;

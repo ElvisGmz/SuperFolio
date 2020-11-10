@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import photo from "../assets/profile.jpeg";
+import photo from "../assets/profile.webp";
 
 export default class Home extends PureComponent {
   render() {
