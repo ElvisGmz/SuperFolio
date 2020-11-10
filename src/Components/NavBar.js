@@ -30,10 +30,10 @@ const NavBar = () => {
 
       navBarMenu.style.cssText = toggleState
       ? `
-        background-color: #212429;
+        
         width: 250px;
       ` : `
-        background-color: transparent;
+        
         width: 0px;
       `
       navBarMenu.style.height = 'calc(100vh - 50px)'

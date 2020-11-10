@@ -185,7 +185,7 @@ header {
 }
 
 .nav > .nav-links > a:hover {
-  background-color: #30303044;
+  background-color: #30303066;
 }
 
 .nav > #nav-check {
@@ -220,12 +220,11 @@ header {
     position: absolute;
     display: block;
     width: 0%;
-    background-color: transparent;
+    background-color: #212429;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
-    top: 50px;
+    top: 56px;
     right: 0px;
-    padding-top: 6px;
     -webkit-transition: all 0.3s ease-in;
     -moz-transition: all 0.3s ease-in;
     -ms-transition: all 0.3s ease-in;
