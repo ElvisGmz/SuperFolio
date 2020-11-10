@@ -21,11 +21,11 @@ const NavBar = () => {
   useEffect(() => {
     const navBarMenu = document.querySelector('.nav-links')
     const header = document.querySelector('header')
-    const container = document.querySelector('.main_Container')
+    // const container = document.querySelector('.main_Container')
 
     if(window.innerWidth <= '600'){
     
-      container.style.filter = toggleState ? 'blur(5px)' : 'blur(0px)'
+      // container.style.filter = toggleState ? 'blur(5px)' : 'blur(0px)'
       header.style.backgroundColor = toggleState ? '#212429' : 'transparent'
 
       navBarMenu.style.cssText = toggleState
