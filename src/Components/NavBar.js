@@ -62,13 +62,13 @@ const NavBar = () => {
           </label>
         </div>
         <div onClick={() => setToggleState(false)} className="nav-links">
-          <a href="https://github.com/ElvisGmz">
-            <img src={gitHub} alt="" /> Github
+          <a href="https://github.com/ElvisGmz" target="_blank" rel="noreferrer">
+            <img src={gitHub} alt="" /> Proyectos
           </a>
-          <a href="https://www.linkedin.com/in/elvisgmz/">
+          <a href="https://www.linkedin.com/in/elvisgmz/" target="_blank" rel="noreferrer">
             <img src={linkedIn} alt="" /> LinkedIn
           </a>
-          <a href="https://codepen.io/ElvisGmz_">
+          <a href="https://codepen.io/ElvisGmz_" target="_blank" rel="noreferrer">
             <img src={codepen} alt="" /> Codepen
           </a>
           <Link to="/blog">

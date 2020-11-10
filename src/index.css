@@ -19,7 +19,7 @@ body {
 .main_Container {
   max-width: 1140px;
   margin: auto;
-  padding: 10px;
+  padding: 10px 20px;
   padding-top: 66px;
   transition: 0.2s all;
   -webkit-transition: 0.2s all;
@@ -193,6 +193,7 @@ header {
 }
 
 @media (max-width: 600px) {
+
   .nav > .nav-btn {
     display: flex;
     justify-content: center;
