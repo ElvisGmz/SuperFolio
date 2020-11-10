@@ -7,41 +7,48 @@ import linkedIn from "../assets/linkedin.svg";
 import codepen from "../assets/codepen.svg";
 import blogLogo from "../assets/blog.svg";
 
-
 const NavBar = () => {
+  const [toggleState, setToggleState] = useState(false);
 
-  const [toggleState, setToggleState] = useState(false)
-
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 100 ||
+      document.documentElement.scrollTop > 100
+    ) {
+      document.querySelector("header").style.backgroundColor = "#21212C";
+    } else {
+      document.querySelector("header").style.backgroundColor = "transparent";
+    }
+  }
 
   const changeStateMenu = (e) => {
     e.preventDefault();
-    setToggleState(!toggleState)
-  }
+    setToggleState(!toggleState);
+  };
 
   useEffect(() => {
-    const navBarMenu = document.querySelector('.nav-links')
-    const header = document.querySelector('header')
-    // const container = document.querySelector('.main_Container')
+    const navBarMenu = document.querySelector(".nav-links");
+    const header = document.querySelector("header");
+    const container = document.querySelector(".main_Container");
 
-    if(window.innerWidth <= '600'){
-    
-      // container.style.filter = toggleState ? 'blur(5px)' : 'blur(0px)'
-      header.style.backgroundColor = toggleState ? '#212429' : 'transparent'
+    window.onscroll = () => scrollFunction();
+
+    if (window.innerWidth <= "600") {
+      container.style.filter = toggleState ? "blur(3px)" : "blur(0px)";
+      header.style.backgroundColor = toggleState ? "#212429" : "transparent";
 
       navBarMenu.style.cssText = toggleState
-      ? `
-        
-        width: 200px;
-      ` : `
-        
-        width: 0px;
+        ? `
+        background-color: #212429;
+        width: 250px;
       `
-      navBarMenu.style.height = 'calc(100vh - 50px)'
-
+        : `
+      background-color: transparent;
+        width: 0px;
+      `;
+      navBarMenu.style.height = "calc(100vh - 50px)";
     }
-  })
-
-  
+  });
 
   return (
     <header>
@@ -62,13 +69,25 @@ const NavBar = () => {
           </label>
         </div>
         <div onClick={() => setToggleState(false)} className="nav-links">
-          <a href="https://github.com/ElvisGmz" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/ElvisGmz"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={gitHub} alt="" /> Proyectos
           </a>
-          <a href="https://www.linkedin.com/in/elvisgmz/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.linkedin.com/in/elvisgmz/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={linkedIn} alt="" /> LinkedIn
           </a>
-          <a href="https://codepen.io/ElvisGmz_" target="_blank" rel="noreferrer">
+          <a
+            href="https://codepen.io/ElvisGmz_"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={codepen} alt="" /> Codepen
           </a>
           <Link to="/blog">
@@ -78,6 +97,6 @@ const NavBar = () => {
       </div>
     </header>
   );
-}
+};
 
-export default NavBar
+export default NavBar;

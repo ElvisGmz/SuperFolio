@@ -107,7 +107,10 @@ header {
 
 #bg{
   width: 100%;
-  min-height: 75vh;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
   object-fit: cover;
   position: absolute;
   z-index: -10;
@@ -221,7 +224,7 @@ header {
     position: absolute;
     display: block;
     width: 0%;
-    background-color: #212429;
+    background-color: transparent;
     transition: all 0.2s ease-in;
     overflow-y: hidden;
     top: 56px;

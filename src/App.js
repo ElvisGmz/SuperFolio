@@ -23,8 +23,8 @@ function App() {
     <Router>
       <NavBar />
       
-      <img src={bg} id="bg" alt=""/>
       <div className="main_Container">
+      <img src={bg} id="bg" alt=""/>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Blog" component={Blog} />

@@ -35,12 +35,13 @@
   padding: 0.3rem 0.7rem;
   margin-bottom: 0;
   border-top: 2px solid dodgerblue;
+  z-index: 1000;
 }
 
 .hero .column p {
   font-size: 18px;
   margin-top: 0;
-  /* border: 2px solid  #f9f9f9; */
+  color: #FFF;
   background-color: #21212c;
   font-size: 14px;
   font-weight: 100;
@@ -49,7 +50,7 @@
 
 .hero .column p code{
   line-height: 20px;
-  color: rgba(255, 255, 255, 0.712);
+  color: #FFF;
 }
 
 .imgProfile {
