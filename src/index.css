@@ -21,7 +21,7 @@ body {
   margin: auto;
   padding: 10px;
   padding-top: 66px;
-  transition: 0.3s all;
+  transition: 0.2s all;
   -webkit-transition: 0.2s all;
   -moz-transition: 0.2s all;
   -ms-transition: 0.2s all;
@@ -98,11 +98,11 @@ header {
   width: 100%;
   z-index: 100000;
   font-family: "Rubik", sans-serif;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
 }
 
 #bg{
@@ -221,15 +221,15 @@ header {
     display: block;
     width: 0%;
     background-color: #212429;
-    transition: all 0.3s ease-in;
+    transition: all 0.2s ease-in;
     overflow-y: hidden;
     top: 56px;
     right: 0px;
-    -webkit-transition: all 0.3s ease-in;
-    -moz-transition: all 0.3s ease-in;
-    -ms-transition: all 0.3s ease-in;
-    -o-transition: all 0.3s ease-in;
-  }
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+}
   .nav > .nav-links > a {
     width: 100%;
     font-size: 14px;
@@ -242,7 +242,7 @@ header {
     margin-right: 10px;
   }
 
-  body #root header .nav > #nav-check:not(:checked) ~ .nav-links {
+  /* body #root header .nav > #nav-check:not(:checked) ~ .nav-links {
     height: calc(100vh - 50px);
     width: 0px;
   }
@@ -251,7 +251,7 @@ header {
     height: calc(100vh - 50px);
     overflow-y: auto;
     width: 250px;
-  }
+  } */
 }
 
 

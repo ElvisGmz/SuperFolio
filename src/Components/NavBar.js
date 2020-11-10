@@ -31,7 +31,7 @@ const NavBar = () => {
       navBarMenu.style.cssText = toggleState
       ? `
         
-        width: 250px;
+        width: 200px;
       ` : `
         
         width: 0px;
