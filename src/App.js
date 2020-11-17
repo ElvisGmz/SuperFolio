@@ -8,7 +8,7 @@ import Blog from "./Components/Blog";
 import NotFound from "./Components/NotFound";
 import Loader from "./Components/Loader";
 
-import bg from './assets/background.svg'
+import bg from "./assets/background.svg";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -22,9 +22,9 @@ function App() {
   ) : (
     <Router>
       <NavBar />
-      
+
       <div className="main_Container">
-      <img src={bg} id="bg" alt=""/>
+        <img src={bg} id="bg" alt="" />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Blog" component={Blog} />

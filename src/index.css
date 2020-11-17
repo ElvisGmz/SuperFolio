@@ -5,6 +5,11 @@
   z-index: 100;
 }
 
+html {
+  width: 100vw;
+  position: relative;
+}
+
 body {
   margin: 0px;
   font-family: "Montserrat", sans-serif;
@@ -105,8 +110,8 @@ header {
   -o-transition: all 0.2s;
 }
 
-#bg{
-  width: 100%;
+#bg {
+  width: 100vw;
   left: 0;
   top: 0;
   right: 0;
@@ -114,6 +119,7 @@ header {
   object-fit: cover;
   position: absolute;
   z-index: -10;
+  min-height: 100vh;
 }
 
 .nav {
@@ -167,6 +173,7 @@ header {
 
 .nav > .nav-links {
   display: flex;
+  width: auto;
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
@@ -196,7 +203,6 @@ header {
 }
 
 @media (max-width: 600px) {
-
   .nav > .nav-btn {
     display: flex;
     justify-content: center;
@@ -223,7 +229,8 @@ header {
   .nav > .nav-links {
     position: absolute;
     display: block;
-    width: 0%;
+    width: 0;
+    max-width: 250px;
     background-color: transparent;
     transition: all 0.2s ease-in;
     overflow-y: hidden;
@@ -233,7 +240,7 @@ header {
     -moz-transition: all 0.2s ease-in;
     -ms-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
-}
+  }
   .nav > .nav-links > a {
     width: 100%;
     font-size: 14px;
@@ -258,7 +265,6 @@ header {
   } */
 }
 
-
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 0;
 }

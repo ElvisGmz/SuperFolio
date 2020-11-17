@@ -29,23 +29,28 @@ const NavBar = () => {
   useEffect(() => {
     const navBarMenu = document.querySelector(".nav-links");
     const header = document.querySelector("header");
-    const container = document.querySelector(".main_Container");
 
     window.onscroll = () => scrollFunction();
 
-    if (window.innerWidth <= "600") {
-      container.style.filter = toggleState ? "brightness(30%)" : "brightness(100%)";
-      header.style.backgroundColor = toggleState ? "#212429" : "transparent";
+    window.onresize = () => {
+      setToggleState(false);
+      if (window.innerWidth >= "600") {
+        navBarMenu.style.width = "auto";
+        navBarMenu.style.height = "auto";
+        header.style.backgroundColor = "transparent";
+        navBarMenu.style.backgroundColor = "transparent";
+      } else {
+        navBarMenu.style.width = "0";
+        navBarMenu.style.height = "auto";
+      }
+    };
 
-      navBarMenu.style.cssText = toggleState
-        ? `
-        background-color: #212429;
-        width: 250px;
-      `
-        : `
-      background-color: transparent;
-        width: 0px;
-      `;
+    if (window.innerWidth <= "600") {
+      header.style.backgroundColor = toggleState ? "#212429" : "transparent";
+      navBarMenu.style.width = toggleState ? "100%" : "0";
+      navBarMenu.style.backgroundColor = toggleState
+        ? "#212429"
+        : "transparent";
       navBarMenu.style.height = "calc(100vh - 50px)";
     }
   });
