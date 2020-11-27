@@ -27,8 +27,8 @@ function App() {
         <img src={bg} id="bg" alt="" />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/Blogs" component={ListBlogs} />
-          <Route path="/Entrada/:id" component={WatchBlog} />
+          <Route path="/Blog" component={ListBlogs} />
+          <Route path="/Read/:id" component={WatchBlog} />
           <Route path="*" component={NotFound} />
         </Switch>
       </div>

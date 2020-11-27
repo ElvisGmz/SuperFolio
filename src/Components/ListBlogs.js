@@ -28,7 +28,7 @@ export default function ListBlogs() {
 
   return (
     <List>
-      <Header>Hey quieres ver #Blogs </Header>
+      <Header>Bienvenid@ a mi #Blog </Header>
       {blogsList.map((item) => (
         <BlogItem
           key={item._id}

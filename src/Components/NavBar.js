@@ -94,7 +94,7 @@ const NavBar = () => {
           >
             <img src={codepen} alt="" /> Codepen
           </a>
-          <Link to="/Blogs">
+          <Link to="/Blog">
             <img src={blogLogo} alt="" /> Blog
           </Link>
         </div>

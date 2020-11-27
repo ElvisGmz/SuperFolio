@@ -52,7 +52,7 @@ export default function BlogItem(props) {
 
     const history = useHistory();
     function sendID(id) {
-        history.push(`/Entrada/${id}`)
+        history.push(`/Read/${id}`)
     }
 
   return (
@@ -61,7 +61,7 @@ export default function BlogItem(props) {
       <Content>
         <Title>{props.title}</Title>
         <Details>
-          {props.author} | <Moment format="YYYY/MM/DD">{props.date}</Moment>
+          {props.author} | <Moment format="DD / MM / YYYY">{props.date}</Moment>
         </Details>
         <Description>{props.content}</Description>
       </Content>
