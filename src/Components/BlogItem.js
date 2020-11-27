@@ -52,7 +52,7 @@ export default function BlogItem(props) {
 
     const history = useHistory();
     function sendID(id) {
-        history.push(`/Read/${id}`)
+        history.push(`/Entrada/${id}`)
     }
 
   return (
