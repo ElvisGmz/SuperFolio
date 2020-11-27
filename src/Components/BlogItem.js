@@ -51,7 +51,6 @@ const Description = styled.p`
 export default function BlogItem(props) {
 
     const history = useHistory();
-
     function sendID(id) {
         history.push(`/Entrada/${id}`)
     }
