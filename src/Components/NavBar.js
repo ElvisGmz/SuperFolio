@@ -12,8 +12,8 @@ const NavBar = () => {
 
   function scrollFunction() {
     if (
-      document.body.scrollTop > 100 ||
-      document.documentElement.scrollTop > 100
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
     ) {
       document.querySelector("header").style.backgroundColor = "#21212C";
     } else {
@@ -58,7 +58,6 @@ const NavBar = () => {
   return (
     <header>
       <div className="nav">
-        {/* <input type="checkbox" id="nav-check" /> */}
         <Link to="/" onClick={() => setToggleState(false)}>
           <div className="nav-header">
             <div className="nav-title">
@@ -95,7 +94,7 @@ const NavBar = () => {
           >
             <img src={codepen} alt="" /> Codepen
           </a>
-          <Link to="/blog">
+          <Link to="/Blogs">
             <img src={blogLogo} alt="" /> Blog
           </Link>
         </div>

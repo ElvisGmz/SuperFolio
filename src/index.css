@@ -24,7 +24,7 @@ body {
 .main_Container {
   max-width: 1140px;
   margin: auto;
-  padding: 10px 20px;
+  padding: 10px 10px;
   padding-top: 66px;
   transition: 0.2s all;
   -webkit-transition: 0.2s all;
@@ -111,13 +111,13 @@ header {
 }
 
 #bg {
+  position: absolute;
   width: 100vw;
   left: 0;
   top: 0;
   right: 0;
   height: 100%;
   object-fit: cover;
-  position: absolute;
   z-index: -10;
   min-height: 100vh;
 }

@@ -4,11 +4,11 @@ import "./App.css";
 
 import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
-import Blog from "./Components/Blog";
 import NotFound from "./Components/NotFound";
 import Loader from "./Components/Loader";
-
 import bg from "./assets/background.svg";
+import WatchBlog from "./Components/WatchBlog";
+import ListBlogs from "./Components/ListBlogs";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -27,7 +27,8 @@ function App() {
         <img src={bg} id="bg" alt="" />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/Blog" component={Blog} />
+          <Route path="/Blogs" component={ListBlogs} />
+          <Route path="/Entrada/:id" component={WatchBlog} />
           <Route path="*" component={NotFound} />
         </Switch>
       </div>
