@@ -1,7 +1,31 @@
-import React from "react";
-import { useHistory } from "react-router-dom"
+import React, { useCallback } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import Moment from "react-moment";
+
+export default function BlogItem(props) {
+  const { push } = useHistory();
+
+  const sendID = useCallback(
+    (id) => {
+      push("/Entrada/" + id);
+    },
+    [push]
+  );
+
+  return (
+    <Card onClick={() => sendID(props.idBlog)}>
+      <Banner src={props.bannerUrl} alt="Banner" />
+      <Content>
+        <Title>{props.title}</Title>
+        <Details>
+          {props.author} | <Moment format="DD / MM / YYYY">{props.date}</Moment>
+        </Details>
+        <Description>{props.content}</Description>
+      </Content>
+    </Card>
+  );
+}
 
 const Card = styled.div`
   background-color: #21212c;
@@ -47,24 +71,3 @@ const Description = styled.p`
   font-size: 12px;
   line-height: 18px;
 `;
-
-export default function BlogItem(props) {
-
-    const history = useHistory();
-    function sendID(id) {
-        history.push(`/Entrada/${id}`)
-    }
-
-  return (
-    <Card onClick={()=>sendID(props.idBlog)}>
-      <Banner src={props.bannerUrl} alt="Banner" />
-      <Content>
-        <Title>{props.title}</Title>
-        <Details>
-          {props.author} | <Moment format="DD / MM / YYYY">{props.date}</Moment>
-        </Details>
-        <Description>{props.content}</Description>
-      </Content>
-    </Card>
-  );
-}
