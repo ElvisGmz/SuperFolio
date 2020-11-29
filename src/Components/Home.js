@@ -2,6 +2,7 @@ import React from "react";
 import photo from "../assets/profile.webp";
 import useDescription from "../hooks/useDescription";
 import useTitle from "../hooks/useTitle";
+import PlayList from './PlayList'
 
 function Home() {
   //EJEMPLO DE COMO USAR LOS HOOKS DE SEO
@@ -28,6 +29,8 @@ function Home() {
             cotidiana-moderna, adquiriendo conocimientos en el camino.
           </code>
         </p>
+
+        <PlayList />
       </div>
     </div>
   );

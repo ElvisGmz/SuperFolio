@@ -73,6 +73,9 @@ const NavBar = () => {
           </label>
         </div>
         <div onClick={() => setToggleState(false)} className="nav-links">
+          <Link to="/Blog">
+            <img src={blogLogo} alt="" /> Blog
+          </Link>
           <a
             href="https://github.com/ElvisGmz"
             target="_blank"
@@ -94,9 +97,6 @@ const NavBar = () => {
           >
             <img src={codepen} alt="" /> Codepen
           </a>
-          <Link to="/Blog">
-            <img src={blogLogo} alt="" /> Blog
-          </Link>
         </div>
       </div>
     </header>
