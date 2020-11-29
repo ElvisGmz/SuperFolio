@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 // ESTE HOOK ES PARA MEJORAR EL SEO Y CAMBIAR LA DESCRIPCION POR CADA PAGINA
-export function useDescription({ description }) {
+export default function useDescription({ description }) {
   const prevDescription = useRef(
     document.querySelector('meta[name="description"]').getAttribute("content")
   );

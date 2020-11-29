@@ -1,12 +1,13 @@
 import React from "react";
 import photo from "../assets/profile.webp";
-import { useDescription } from "../hooks/useDescription";
+import useDescription from "../hooks/useDescription";
 import useTitle from "../hooks/useTitle";
 
 function Home() {
   //EJEMPLO DE COMO USAR LOS HOOKS DE SEO
   useTitle({ title: "Inicio" });
-  useDescription({description: "Bienvenido a Inicio"})
+  useDescription({description: "Bienvenido a mi web, puedes leer blog, y otras cositas"})
+  
   return (
     <div className="hero">
       <div className="column">

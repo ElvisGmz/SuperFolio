@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import useTitle from "../hooks/useTitle";
+import useDescription from "../hooks/useDescription";
 import styled from "styled-components";
 import BlogItem from "./BlogItem";
 
@@ -17,8 +19,13 @@ const Header = styled.h1`
   margin-top: 2rem;
 `;
 
+
 export default function ListBlogs() {
   const [blogsList, setBlogsList] = useState([]);
+
+  useTitle({title: 'Blog'});
+  
+  useDescription({description: 'Un poco de lectura para fortalecer tus habilidades'});
 
   useEffect(() => {
     fetch(process.env.REACT_APP_BLOGSAPI)
