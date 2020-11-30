@@ -19,13 +19,14 @@ const Header = styled.h1`
   margin-top: 2rem;
 `;
 
-
 export default function ListBlogs() {
   const [blogsList, setBlogsList] = useState([]);
 
-  useTitle({title: 'Blog'});
-  
-  useDescription({description: 'Un poco de lectura para fortalecer tus habilidades'});
+  useTitle({ title: "Blog" });
+
+  useDescription({
+    description: "Un poco de lectura para fortalecer tus habilidades",
+  });
 
   useEffect(() => {
     fetch(process.env.REACT_APP_BLOGSAPI)
@@ -45,7 +46,7 @@ export default function ListBlogs() {
           content={item.content}
           author={item.author}
           date={item.date}
-          fileUrl = {item.fileUrl}
+          fileUrl={item.fileUrl}
         />
       ))}
     </List>
