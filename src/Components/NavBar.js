@@ -140,9 +140,9 @@ const NavLinks = styled.div`
   @media (max-width: 600px) {
     position: absolute;
     display: block;
-    width: 0;
+    width: ${({widthLlinks}) => widthLlinks};
     max-width: 250px;
-    background-color: transparent;
+    background-color: ${({bgColor}) => bgColor};
     transition: all 0.2s ease-in;
     overflow-y: hidden;
     top: 56px;
@@ -151,6 +151,7 @@ const NavLinks = styled.div`
     -moz-transition: all 0.2s ease-in;
     -ms-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
+    height: calc(100vh - 50px);
 
     & > a {
       width: 100%;
@@ -192,41 +193,24 @@ const NavBar = () => {
   const changeStateMenu = (e) => {
     e.preventDefault();
     setToggleState(!toggleState);
-    toggleState ? setBarVisible(false) : setBarVisible(true)
+  };
+
+  window.onscroll = () => {
+    scrollFunction();
+    getScrollSize();
+  };
+
+  window.onresize = () => {
+    setToggleState(false);
+    if (window.innerWidth >= "600") {
+      setBarVisible(false);
+    }
   };
 
   useEffect(() => {
-    const navBarMenu = document.querySelector(NavLinks);
-    const header = document.querySelector(Header);
+    toggleState ? setBarVisible(true) : setBarVisible(false)
+  }, [toggleState]);
 
-    window.onscroll = () => {
-      scrollFunction();
-      getScrollSize();
-    };
-
-    window.onresize = () => {
-      setToggleState(false);
-      if (window.innerWidth >= "600") {
-        navBarMenu.style.width = "auto";
-        navBarMenu.style.height = "auto";
-        header.style.backgroundColor = "transparent";
-        navBarMenu.style.backgroundColor = "transparent";
-        setBarVisible(false);
-      } else {
-        navBarMenu.style.width = "0";
-        navBarMenu.style.height = "auto";
-        setBarVisible(true);
-      }
-    };
-
-    if (window.innerWidth <= "600") {
-      navBarMenu.style.width = toggleState ? "100%" : "0";
-      navBarMenu.style.backgroundColor = toggleState
-        ? "#212429"
-        : "transparent";
-      navBarMenu.style.height = "calc(100vh - 50px)";
-    }
-  });
 
   return (
     <Header barVisible={barVisible ? 'dodgerblue' : 'transparent'} bgColor={barVisible ? '#21212C' : 'transparent'} barWidth={barWidth}>
@@ -245,7 +229,9 @@ const NavBar = () => {
             <span></span>
           </label>
         </div>
-        <NavLinks onClick={() => setToggleState(false)}>
+        <NavLinks widthLlinks={toggleState ? '100%' : '0'} bgColor={toggleState
+        ? '#212429'
+        : 'transparent'} onClick={() => setToggleState(false)}>
           <Link to="/Blog">
             <img src={blogLogo} alt="" /> Blog
           </Link>
