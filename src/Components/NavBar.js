@@ -9,7 +9,7 @@ import codepen from "../assets/codepen.svg";
 import blogLogo from "../assets/blog.svg";
 
 const Header = styled.header`
-  background-color: transparent;
+  background-color: ${({bgColor}) => bgColor};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,16 +176,13 @@ const NavBar = () => {
       document.body.scrollTop > 50 ||
       document.documentElement.scrollTop > 50
     ) {
-      document.querySelector("header").style.backgroundColor = "#21212C";
       setBarVisible(true);
     } else {
-      document.querySelector("header").style.backgroundColor = "transparent";
       setBarVisible(false);
     }
   }
 
   function getScrollSize() {
-    
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var scrolled = (winScroll / height) * 100;
@@ -202,8 +199,8 @@ const NavBar = () => {
     const header = document.querySelector(Header);
 
     window.onscroll = () => {
-      getScrollSize();
       scrollFunction();
+      getScrollSize();
     };
 
     window.onresize = () => {
@@ -213,14 +210,15 @@ const NavBar = () => {
         navBarMenu.style.height = "auto";
         header.style.backgroundColor = "transparent";
         navBarMenu.style.backgroundColor = "transparent";
+        setBarVisible(false);
       } else {
         navBarMenu.style.width = "0";
         navBarMenu.style.height = "auto";
+        setBarVisible(true);
       }
     };
 
     if (window.innerWidth <= "600") {
-      header.style.backgroundColor = toggleState ? "#212429" : "transparent";
       navBarMenu.style.width = toggleState ? "100%" : "0";
       navBarMenu.style.backgroundColor = toggleState
         ? "#212429"
@@ -230,7 +228,7 @@ const NavBar = () => {
   });
 
   return (
-    <Header barVisible={barVisible ? 'dodgerblue' : 'transparent'} barWidth={barWidth}>
+    <Header barVisible={barVisible ? 'dodgerblue' : 'transparent'} bgColor={barVisible ? '#21212C' : 'transparent'} barWidth={barWidth}>
       <Nav>
         <Link to="/" onClick={() => setToggleState(false)}>
           <div className="nav-header">
