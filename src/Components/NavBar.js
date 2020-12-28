@@ -23,6 +23,19 @@ const Header = styled.header`
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
 
+
+  &:after{
+    position: absolute;
+    content: '';
+    background-color: ${({barVisible}) => barVisible} ;
+    width: ${({barWidth}) => barWidth};
+    height: 2px;
+    z-index: 10000;
+    bottom: 0;
+    transition: all 0.2s;
+    left: 0;
+  }
+
   .nav-title {
     display: flex;
     font-size: 22px;
@@ -155,6 +168,8 @@ const NavLinks = styled.div`
 
 const NavBar = () => {
   const [toggleState, setToggleState] = useState(false);
+  const [barVisible, setBarVisible] = useState(false)
+  const [barWidth, setBarWidth] = useState('0')
 
   function scrollFunction() {
     if (
@@ -162,9 +177,19 @@ const NavBar = () => {
       document.documentElement.scrollTop > 50
     ) {
       document.querySelector("header").style.backgroundColor = "#21212C";
+      setBarVisible(true);
     } else {
       document.querySelector("header").style.backgroundColor = "transparent";
+      setBarVisible(false);
     }
+  }
+
+  function getScrollSize() {
+    
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    setBarWidth(`${scrolled}%`)
   }
 
   const changeStateMenu = (e) => {
@@ -176,7 +201,10 @@ const NavBar = () => {
     const navBarMenu = document.querySelector(NavLinks);
     const header = document.querySelector(Header);
 
-    window.onscroll = () => scrollFunction();
+    window.onscroll = () => {
+      getScrollSize();
+      scrollFunction();
+    };
 
     window.onresize = () => {
       setToggleState(false);
@@ -202,7 +230,7 @@ const NavBar = () => {
   });
 
   return (
-    <Header>
+    <Header barVisible={barVisible ? 'dodgerblue' : 'transparent'} barWidth={barWidth}>
       <Nav>
         <Link to="/" onClick={() => setToggleState(false)}>
           <div className="nav-header">

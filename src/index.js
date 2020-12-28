@@ -14,6 +14,10 @@ const GlobalStyles = createGlobalStyle`
     z-index: 100;
   }
 
+  *::after, *::before{
+    box-sizing: border-box;
+  }
+
   html {
     width: 100vw;
     position: relative;
@@ -30,8 +34,8 @@ const GlobalStyles = createGlobalStyle`
   margin-top: 0;
   }
 
-  ::-webkit-scrollbar {
-  width: 0;
+  ::-webkit-scrollbar{
+    display: none;
   }
 `;
 

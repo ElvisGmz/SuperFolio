@@ -14,6 +14,7 @@ const BlogView = styled.div`
 
   p {
     line-height: 25px;
+    letter-spacing: 1px;
   }
 
   table {
@@ -136,12 +137,10 @@ const BlogView = styled.div`
     font-family: "Courier New", Courier, monospace;
     font-size: 14px;
     white-space: pre-line;
+    word-wrap: break-word;
   }
 
   pre {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #21212c;
     border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -149,12 +148,15 @@ const BlogView = styled.div`
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
     overflow-x: scroll;
-    padding: 0.5rem 1rem 0px 1rem;
+    padding: 0.5rem 1rem;
+    word-wrap: break-word;
+
   }
 
   pre code {
     background-color: #21212c;
-    padding: 0.5rem 0 0rem;
+    padding: 0.5rem 0;
+    white-space: pre;
     color: #fff;
   }
 `;
