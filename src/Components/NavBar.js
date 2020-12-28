@@ -192,6 +192,7 @@ const NavBar = () => {
   const changeStateMenu = (e) => {
     e.preventDefault();
     setToggleState(!toggleState);
+    toggleState ? setBarVisible(false) : setBarVisible(true)
   };
 
   useEffect(() => {
