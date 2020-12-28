@@ -150,7 +150,6 @@ const BlogView = styled.div`
     overflow-x: scroll;
     padding: 0.5rem 1rem;
     word-wrap: break-word;
-
   }
 
   pre code {

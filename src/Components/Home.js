@@ -134,7 +134,11 @@ function Home() {
           <PlayList />
         </Column>
         <Column>
-          <img style={{maxWidth: '250px', margin: 'auto'}} src={musicLogo} alt=""/>
+          <img
+            style={{ maxWidth: "250px", margin: "auto" }}
+            src={musicLogo}
+            alt=""
+          />
         </Column>
       </Row>
     </>

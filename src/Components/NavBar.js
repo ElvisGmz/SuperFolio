@@ -9,7 +9,7 @@ import codepen from "../assets/codepen.svg";
 import blogLogo from "../assets/blog.svg";
 
 const Header = styled.header`
-  background-color: ${({bgColor}) => bgColor};
+  background-color: ${({ bgColor }) => bgColor};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,12 +23,11 @@ const Header = styled.header`
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
 
-
-  &:after{
+  &:after {
     position: absolute;
-    content: '';
-    background-color: ${({barVisible}) => barVisible} ;
-    width: ${({barWidth}) => barWidth};
+    content: "";
+    background-color: ${({ barVisible }) => barVisible};
+    width: ${({ barWidth }) => barWidth};
     height: 2px;
     z-index: 10000;
     bottom: 0;
@@ -140,9 +139,9 @@ const NavLinks = styled.div`
   @media (max-width: 600px) {
     position: absolute;
     display: block;
-    width: ${({widthLlinks}) => widthLlinks};
+    width: ${({ widthLlinks }) => widthLlinks};
     max-width: 250px;
-    background-color: ${({bgColor}) => bgColor};
+    background-color: ${({ bgColor }) => bgColor};
     transition: all 0.2s ease-in;
     overflow-y: hidden;
     top: 56px;
@@ -169,8 +168,8 @@ const NavLinks = styled.div`
 
 const NavBar = () => {
   const [toggleState, setToggleState] = useState(false);
-  const [barVisible, setBarVisible] = useState(false)
-  const [barWidth, setBarWidth] = useState('0')
+  const [barVisible, setBarVisible] = useState(false);
+  const [barWidth, setBarWidth] = useState("0");
 
   function scrollFunction() {
     if (
@@ -184,10 +183,13 @@ const NavBar = () => {
   }
 
   function getScrollSize() {
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    var height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
     var scrolled = (winScroll / height) * 100;
-    setBarWidth(`${scrolled}%`)
+    setBarWidth(`${scrolled}%`);
   }
 
   const changeStateMenu = (e) => {
@@ -208,12 +210,15 @@ const NavBar = () => {
   };
 
   useEffect(() => {
-    toggleState ? setBarVisible(true) : setBarVisible(false)
+    toggleState ? setBarVisible(true) : setBarVisible(false);
   }, [toggleState]);
 
-
   return (
-    <Header barVisible={barVisible ? 'dodgerblue' : 'transparent'} bgColor={barVisible ? '#21212C' : 'transparent'} barWidth={barWidth}>
+    <Header
+      barVisible={barVisible ? "dodgerblue" : "transparent"}
+      bgColor={barVisible ? "#21212C" : "transparent"}
+      barWidth={barWidth}
+    >
       <Nav>
         <Link to="/" onClick={() => setToggleState(false)}>
           <div className="nav-header">
@@ -229,9 +234,11 @@ const NavBar = () => {
             <span></span>
           </label>
         </div>
-        <NavLinks widthLlinks={toggleState ? '100%' : '0'} bgColor={toggleState
-        ? '#212429'
-        : 'transparent'} onClick={() => setToggleState(false)}>
+        <NavLinks
+          widthLlinks={toggleState ? "100%" : "0"}
+          bgColor={toggleState ? "#212429" : "transparent"}
+          onClick={() => setToggleState(false)}
+        >
           <Link to="/Blog">
             <img src={blogLogo} alt="" /> Blog
           </Link>
