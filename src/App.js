@@ -40,7 +40,6 @@ function App() {
     <Router>
       <Suspense fallback={<Loader />}>
         <NavBar />
-
         <Container>
           <Background src={bg} />
           <Switch>
