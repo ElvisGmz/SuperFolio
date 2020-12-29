@@ -169,7 +169,7 @@ const NavLinks = styled.div`
 const NavBar = () => {
   const [toggleState, setToggleState] = useState(false);
   const [barVisible, setBarVisible] = useState(false);
-  const [barWidth, setBarWidth] = useState("0");
+  const [barWidth, setBarWidth] = useState("0%");
 
   function scrollFunction() {
     if (
@@ -188,7 +188,7 @@ const NavBar = () => {
     var height =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
+    var scrolled = Math.round((winScroll / height) * 100);
     setBarWidth(`${scrolled}%`);
   }
 
@@ -198,8 +198,8 @@ const NavBar = () => {
   };
 
   window.onscroll = () => {
-    scrollFunction();
     getScrollSize();
+    scrollFunction();
   };
 
   window.onresize = () => {
