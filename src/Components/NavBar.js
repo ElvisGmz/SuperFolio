@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import logoNav from "../assets/codificacion.svg";
 import gitHub from "../assets/github.svg";
+import kofi from "../assets/kofi.svg";
 import linkedIn from "../assets/linkedin.svg";
 import codepen from "../assets/codepen.svg";
 
@@ -124,6 +125,8 @@ const NavLinks = styled.div`
 
   a img {
     width: 20px;
+    height: 20px;
+    transition: all 0.2s;
   }
 
   a:hover {
@@ -299,6 +302,13 @@ const NavBar = () => {
               rel="noreferrer"
             >
               <img src={gitHub} alt="" />
+            </a>
+            <a
+              href="https://ko-fi.com/elvisgmz/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={kofi} alt="" />
             </a>
             <a
               href="https://www.linkedin.com/in/elvisgmz/"
