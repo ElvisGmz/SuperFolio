@@ -157,8 +157,8 @@ const NavLinks = styled.div`
     }
 
     a:hover{
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
 
     & > a img {
@@ -192,8 +192,17 @@ const Socials = styled.div`
 @media (max-width: 768px) {
   position: absolute;
   bottom: 0;
+  padding-bottom: 5px;
   justify-content: center;
   width: 100%;
+
+
+
+  a:hover{
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+    }
+
 }
 `;
 
