@@ -241,15 +241,13 @@ const NavBar = () => {
   };
 
   window.onscroll = () => {
+    setToggleState(false);
     getScrollSize();
     scrollFunction();
   };
 
   window.onresize = () => {
     setToggleState(false);
-    if (window.innerWidth >= "600") {
-      setBarVisible(false);
-    }
   };
 
   useEffect(() => {

@@ -37,7 +37,7 @@ export default function ListBlogs() {
   return (
     <List>
       <Header>Bienvenid@ a mi #Blog </Header>
-      {blogsList.map((item) => (
+      {blogsList.slice(0).reverse().map((item) => (
         <BlogItem
           key={item._id}
           idBlog={item._id}
