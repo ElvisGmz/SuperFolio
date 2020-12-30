@@ -38,8 +38,9 @@ const Card = styled.div`
   overflow: hidden;
   cursor: pointer;
   transition: all 0.2s;
-  &:hover {
-    transform: scale(1.02);
+
+  &:active {
+    transform: scale(0.975);
   }
 `;
 

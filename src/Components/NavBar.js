@@ -6,7 +6,6 @@ import logoNav from "../assets/codificacion.svg";
 import gitHub from "../assets/github.svg";
 import linkedIn from "../assets/linkedin.svg";
 import codepen from "../assets/codepen.svg";
-import blogLogo from "../assets/blog.svg";
 
 const Header = styled.header`
   background-color: ${({ bgColor }) => bgColor};
@@ -78,7 +77,7 @@ const Nav = styled.div`
     justify-content: center;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .nav-btn {
       display: flex;
       justify-content: center;
@@ -108,7 +107,6 @@ const Nav = styled.div`
 
 const NavLinks = styled.div`
   display: flex;
-  width: auto;
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
@@ -121,22 +119,20 @@ const NavLinks = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    transition: all 0.2s;
   }
 
   a img {
     width: 20px;
-    margin-right: 7px;
   }
 
   a:hover {
-    background-color: #30303066;
+    background-color: dodgerblue;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
   }
 
-  #nav-check {
-    display: none;
-  }
-
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     position: absolute;
     display: block;
     width: ${({ widthLlinks }) => widthLlinks};
@@ -160,10 +156,45 @@ const NavLinks = styled.div`
       margin: 0;
     }
 
+    a:hover{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    }
+
     & > a img {
       margin-right: 10px;
     }
   }
+`;
+
+const Routes = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: row wrap;
+
+  
+@media (max-width: 768px) {
+  flex-flow: column nowrap;
+  
+  a{
+    width: 100%;
+  }
+  
+}
+`;
+
+const Socials = styled.div`
+  position: relative;
+  display: flex;
+
+  
+@media (max-width: 768px) {
+  position: absolute;
+  bottom: 0;
+  justify-content: center;
+  width: 100%;
+}
 `;
 
 const NavBar = () => {
@@ -183,12 +214,12 @@ const NavBar = () => {
   }
 
   function getScrollSize() {
-    var winScroll =
+    let winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
-    var height =
+    let height =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
-    var scrolled = Math.round((winScroll / height) * 100);
+    let scrolled = Math.round((winScroll / height) * 100);
     setBarWidth(`${scrolled}vw`);
   }
 
@@ -239,30 +270,42 @@ const NavBar = () => {
           bgColor={toggleState ? "#212429" : "transparent"}
           onClick={() => setToggleState(false)}
         >
-          <Link to="/Blog">
-            <img src={blogLogo} alt="" /> Blog
-          </Link>
-          <a
-            href="https://github.com/ElvisGmz"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={gitHub} alt="" /> Proyectos
-          </a>
-          <a
-            href="https://www.linkedin.com/in/elvisgmz/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={linkedIn} alt="" /> LinkedIn
-          </a>
-          <a
-            href="https://codepen.io/ElvisGmz_"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={codepen} alt="" /> Codepen
-          </a>
+          <Routes>
+            <Link to="/Blog"> Blog
+            </Link>
+            <Link to="/Cursos">Cursos
+            </Link>
+            <Link to="/SobreMi">Sobre Mi
+            </Link>
+            <Link to="/Experiencia">Experiencia
+            </Link>
+            <Link to="/Charlas">Charlas
+            </Link>
+          </Routes>
+
+          <Socials>
+            <a
+              href="https://github.com/ElvisGmz"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={gitHub} alt="" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/elvisgmz/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={linkedIn} alt="" />
+            </a>
+            <a
+              href="https://codepen.io/ElvisGmz_"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={codepen} alt="" />
+            </a>
+          </Socials>
         </NavLinks>
       </Nav>
     </Header>
