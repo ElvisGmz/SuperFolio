@@ -37,18 +37,21 @@ export default function ListBlogs() {
   return (
     <List>
       <Header>Bienvenid@ a mi #Blog </Header>
-      {blogsList.slice(0).reverse().map((item) => (
-        <BlogItem
-          key={item._id}
-          idBlog={item._id}
-          title={item.title}
-          bannerUrl={item.bannerUrl}
-          content={item.content}
-          author={item.author}
-          date={item.date}
-          fileUrl={item.fileUrl}
-        />
-      ))}
+      {blogsList
+        .slice(0)
+        .reverse()
+        .map((item) => (
+          <BlogItem
+            key={item._id}
+            idBlog={item._id}
+            title={item.title}
+            bannerUrl={item.bannerUrl}
+            content={item.content}
+            author={item.author}
+            date={item.date}
+            fileUrl={item.fileUrl}
+          />
+        ))}
     </List>
   );
 }

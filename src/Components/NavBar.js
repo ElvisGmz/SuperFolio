@@ -159,7 +159,7 @@ const NavLinks = styled.div`
       margin: 0;
     }
 
-    a:hover{
+    a:hover {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
@@ -176,37 +176,31 @@ const Routes = styled.div`
   align-items: flex-start;
   flex-flow: row wrap;
 
-  
-@media (max-width: 768px) {
-  flex-flow: column nowrap;
-  
-  a{
-    width: 100%;
+  @media (max-width: 768px) {
+    flex-flow: column nowrap;
+
+    a {
+      width: 100%;
+    }
   }
-  
-}
 `;
 
 const Socials = styled.div`
   position: relative;
   display: flex;
 
-  
-@media (max-width: 768px) {
-  position: absolute;
-  bottom: 0;
-  padding-bottom: 5px;
-  justify-content: center;
-  width: 100%;
+  @media (max-width: 768px) {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 5px;
+    justify-content: center;
+    width: 100%;
 
-
-
-  a:hover{
+    a:hover {
       border-top-left-radius: 50%;
       border-top-right-radius: 50%;
     }
-
-}
+  }
 `;
 
 const NavBar = () => {
@@ -281,16 +275,11 @@ const NavBar = () => {
           onClick={() => setToggleState(false)}
         >
           <Routes>
-            <Link to="/Blog"> Blog
-            </Link>
-            <Link to="/Cursos">Cursos
-            </Link>
-            <Link to="/SobreMi">Sobre Mi
-            </Link>
-            <Link to="/Experiencia">Experiencia
-            </Link>
-            <Link to="/Charlas">Charlas
-            </Link>
+            <Link to="/Blog"> Blog</Link>
+            <Link to="/Charlas">Charlas</Link>
+            <Link to="/Cursos">Cursos</Link>
+            <Link to="/Experiencia">Experiencia</Link>
+            <Link to="/SobreMi">Sobre Mi</Link>
           </Routes>
 
           <Socials>
