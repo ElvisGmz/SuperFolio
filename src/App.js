@@ -10,6 +10,7 @@ const Charlas = lazy(() => import("./Components/Charlas"));
 const NotFound = lazy(() => import("./Components/NotFound"));
 const WatchBlog = lazy(() => import("./Components/WatchBlog"));
 const ListBlogs = lazy(() => import("./Components/ListBlogs"));
+const Construct = lazy(() => import("./Components/Construct.js"));
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/Blog" component={ListBlogs} />
             <Route path="/Charlas" component={Charlas} />
+            <Route path="/Cursos" component={Construct} />
+            <Route path="/Experiencia" component={Construct} />
+            <Route path="/SobreMi" component={Construct} />
             <Route path="/Entrada/:id" component={WatchBlog} />
             <Route path="*" component={NotFound} />
           </Switch>

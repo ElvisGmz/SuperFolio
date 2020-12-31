@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import photo from "../assets/profile.webp";
-import musicLogo from "../assets/spotify.svg";
 import useDescription from "../hooks/useDescription";
 import useTitle from "../hooks/useTitle";
-import PlayList from "./PlayList";
 
 const Row = styled.div`
   position: relative;
@@ -126,19 +124,6 @@ function Home() {
               cotidiana-moderna, adquiriendo conocimientos en el camino.
             </Code>
           </MeDescription>
-        </Column>
-      </Row>
-
-      <Row>
-        <Column>
-          <PlayList />
-        </Column>
-        <Column>
-          <img
-            style={{ maxWidth: "250px", margin: "auto" }}
-            src={musicLogo}
-            alt=""
-          />
         </Column>
       </Row>
     </>
