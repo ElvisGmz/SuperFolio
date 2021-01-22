@@ -10,6 +10,13 @@ export default function Charlas() {
       </Subtitle>
       <VideoFrame>
         <Frame
+          src="https://www.youtube.com/embed/y_PGuFl_vKg"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></Frame>
+      </VideoFrame>
+      <VideoFrame>
+        <Frame
           src="https://www.youtube.com/embed/b4G8PHNdPnw"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
