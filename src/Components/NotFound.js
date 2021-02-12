@@ -57,7 +57,7 @@ const Fantasma = styled.div`
   #gorro {
     position: absolute;
     max-width: 200px;
-    left: -30px;
+    left: -10px;
     top: -85px;
   }
 
@@ -217,7 +217,7 @@ export default class Home extends PureComponent {
           <div class="spooky">
             <img
               id="gorro"
-              src="https://2.bp.blogspot.com/-rOphqQzWDxk/WfZNDzxSX6I/AAAAAAAAVng/YypjcvoNNlElUQ7SPicMtri6WqMEBlKcwCLcBGAs/s1600/imagenes%2Bde%2Bgorras%2Bde%2Bpapa%2Bnoel%2Bpara%2Bnavidad.png"
+              src="https://cdn.pixabay.com/photo/2020/05/20/02/51/heart-5193242_960_720.png"
               alt=""
             />
             <div className="eyes">
