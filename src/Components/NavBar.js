@@ -8,6 +8,123 @@ import kofi from "../assets/kofi.svg";
 import linkedIn from "../assets/linkedin.svg";
 import codepen from "../assets/codepen.svg";
 
+const NavBar = () => {
+  const [toggleState, setToggleState] = useState(false);
+  const [barVisible, setBarVisible] = useState(false);
+  const [barWidth, setBarWidth] = useState("0vw");
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
+    ) {
+      setBarVisible(true);
+    } else {
+      setBarVisible(false);
+    }
+  }
+
+  function getScrollSize() {
+    let winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    let height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    let scrolled = Math.round((winScroll / height) * 100);
+    setBarWidth(`${scrolled}vw`);
+  }
+
+  const changeStateMenu = (e) => {
+    e.preventDefault();
+    setToggleState(!toggleState);
+  };
+
+  window.onscroll = () => {
+    setToggleState(false);
+    getScrollSize();
+    scrollFunction();
+  };
+
+  window.onresize = () => {
+    setToggleState(false);
+  };
+
+  useEffect(() => {
+    toggleState ? setBarVisible(true) : setBarVisible(false);
+  }, [toggleState]);
+
+  return (
+    <Header
+      barVisible={barVisible ? "dodgerblue" : "transparent"}
+      bgColor={barVisible ? "#21212C" : "transparent"}
+      barWidth={barWidth}
+    >
+      <Nav>
+        <Link to="/" onClick={() => setToggleState(false)}>
+          <div className="nav-header">
+            <div className="nav-title">
+              <img src={logoNav} alt="" />
+            </div>
+          </div>
+        </Link>
+        <div className="nav-btn">
+          <label htmlFor="nav-check" onClick={changeStateMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <NavLinks
+          widthLlinks={toggleState ? "100%" : "0"}
+          bgColor={toggleState ? "#212429" : "transparent"}
+          onClick={() => setToggleState(false)}
+        >
+          <Routes>
+            <Link to="/Blog"> Blog</Link>
+            <Link to="/Charlas">Charlas</Link>
+            <Link to="/Cursos">Cursos</Link>
+            <Link to="/Experiencia">Experiencia</Link>
+            <Link to="/SobreMi">Sobre Mi</Link>
+          </Routes>
+
+          <Socials>
+            <a
+              href="https://github.com/ElvisGmz"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={gitHub} title="GitHub Menu Item" alt="Go to Elvis GitHub" />
+            </a>
+            <a
+              href="https://ko-fi.com/elvisgmz/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={kofi} title="Ko-Fi Menu Item" alt="Go to Elvis Ko-Fi" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/elvisgmz/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={linkedIn} title="LinkedIn Menu Item" alt="Go to Elvis LinkedIn" />
+            </a>
+            <a
+              href="https://codepen.io/ElvisGmz_"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={codepen} title="CodePen Menu Item" alt="Go to Elvis Codepen" />
+            </a>
+          </Socials>
+        </NavLinks>
+      </Nav>
+    </Header>
+  );
+};
+
+export default NavBar;
+
 const Header = styled.header`
   background-color: ${({ bgColor }) => bgColor};
   display: flex;
@@ -202,120 +319,3 @@ const Socials = styled.div`
     }
   }
 `;
-
-const NavBar = () => {
-  const [toggleState, setToggleState] = useState(false);
-  const [barVisible, setBarVisible] = useState(false);
-  const [barWidth, setBarWidth] = useState("0vw");
-
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 50 ||
-      document.documentElement.scrollTop > 50
-    ) {
-      setBarVisible(true);
-    } else {
-      setBarVisible(false);
-    }
-  }
-
-  function getScrollSize() {
-    let winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    let height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    let scrolled = Math.round((winScroll / height) * 100);
-    setBarWidth(`${scrolled}vw`);
-  }
-
-  const changeStateMenu = (e) => {
-    e.preventDefault();
-    setToggleState(!toggleState);
-  };
-
-  window.onscroll = () => {
-    setToggleState(false);
-    getScrollSize();
-    scrollFunction();
-  };
-
-  window.onresize = () => {
-    setToggleState(false);
-  };
-
-  useEffect(() => {
-    toggleState ? setBarVisible(true) : setBarVisible(false);
-  }, [toggleState]);
-
-  return (
-    <Header
-      barVisible={barVisible ? "dodgerblue" : "transparent"}
-      bgColor={barVisible ? "#21212C" : "transparent"}
-      barWidth={barWidth}
-    >
-      <Nav>
-        <Link to="/" onClick={() => setToggleState(false)}>
-          <div className="nav-header">
-            <div className="nav-title">
-              <img src={logoNav} alt="" />
-            </div>
-          </div>
-        </Link>
-        <div className="nav-btn">
-          <label htmlFor="nav-check" onClick={changeStateMenu}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-        </div>
-        <NavLinks
-          widthLlinks={toggleState ? "100%" : "0"}
-          bgColor={toggleState ? "#212429" : "transparent"}
-          onClick={() => setToggleState(false)}
-        >
-          <Routes>
-            <Link to="/Blog"> Blog</Link>
-            <Link to="/Charlas">Charlas</Link>
-            <Link to="/Cursos">Cursos</Link>
-            <Link to="/Experiencia">Experiencia</Link>
-            <Link to="/SobreMi">Sobre Mi</Link>
-          </Routes>
-
-          <Socials>
-            <a
-              href="https://github.com/ElvisGmz"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={gitHub} alt="" />
-            </a>
-            <a
-              href="https://ko-fi.com/elvisgmz/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={kofi} alt="" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/elvisgmz/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={linkedIn} alt="" />
-            </a>
-            <a
-              href="https://codepen.io/ElvisGmz_"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={codepen} alt="" />
-            </a>
-          </Socials>
-        </NavLinks>
-      </Nav>
-    </Header>
-  );
-};
-
-export default NavBar;
