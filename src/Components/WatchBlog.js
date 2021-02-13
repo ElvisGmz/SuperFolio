@@ -1,9 +1,55 @@
 import React, { useState, useEffect } from "react";
+import Loader from "../Components/Loader";
 import useTitle from "../hooks/useTitle";
 import useDescription from "../hooks/useDescription";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import MarkdownView from "react-showdown";
+
+const WatchBlog = () => {
+  const [Loading, setLoading] = useState(true);
+  const [md, setMd] = useState();
+  const [title, setTitle] = useState("Loading...");
+  const [description, setDescription] = useState("Loading...");
+  useTitle({ title });
+  useDescription({ description });
+
+  let id = useParams().id;
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_BLOGSAPI}${id}`)
+      .then((blog) => blog.json())
+      .then((blog) => blog)
+      .then((file) => {
+        setTitle(file.title);
+        setDescription(file.content);
+        getBlog(file.fileUrl);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [id]);
+
+  function getBlog(fileUrl) {
+    fetch(fileUrl)
+      .then((blog) => blog.text())
+      .then((blog) => setMd(blog));
+  }
+
+  return (
+    <>
+      {Loading ? (
+        <Loader />
+      ) : (
+        <BlogView>
+          <MarkdownView markdown={md} />
+        </BlogView>
+      )}
+    </>
+  );
+};
+
+export default WatchBlog;
 
 const BlogView = styled.div`
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -159,38 +205,3 @@ const BlogView = styled.div`
     color: #fff;
   }
 `;
-
-const WatchBlog = () => {
-  const [md, setMd] = useState();
-  const [title, setTitle] = useState("Loading...");
-  const [description, setDescription] = useState("Loading...");
-  useTitle({ title });
-  useDescription({ description });
-
-  let id = useParams().id;
-
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_BLOGSAPI}${id}`)
-      .then((blog) => blog.json())
-      .then((blog) => blog)
-      .then((file) => {
-        setTitle(file.title);
-        setDescription(file.content);
-        getBlog(file.fileUrl);
-      });
-  }, [id]);
-
-  function getBlog(fileUrl) {
-    fetch(fileUrl)
-      .then((blog) => blog.text())
-      .then((blog) => setMd(blog));
-  }
-
-  return (
-    <BlogView>
-      <MarkdownView markdown={md} />
-    </BlogView>
-  );
-};
-
-export default WatchBlog;

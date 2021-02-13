@@ -3,13 +3,13 @@ import styled from "styled-components";
 import { lazy } from "@loadable/component";
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import Loader from "./Components/Loader";
+import ListBlogs from "./Components/ListBlogs";
 
 const NavBar = lazy(() => import("./Components/NavBar"));
 const Home = lazy(() => import("./Components/Home"));
 const Charlas = lazy(() => import("./Components/Charlas"));
 const NotFound = lazy(() => import("./Components/NotFound"));
 const WatchBlog = lazy(() => import("./Components/WatchBlog"));
-const ListBlogs = lazy(() => import("./Components/ListBlogs"));
 const Construct = lazy(() => import("./Components/Construct.js"));
 
 function App() {

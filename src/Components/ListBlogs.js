@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Loader from "../Components/Loader";
 import useTitle from "../hooks/useTitle";
 import useDescription from "../hooks/useDescription";
 import styled from "styled-components";
@@ -21,6 +22,7 @@ const Header = styled.h1`
 
 export default function ListBlogs() {
   const [blogsList, setBlogsList] = useState([]);
+  const [Loading, setLoading] = useState(true);
 
   useTitle({ title: "Blog" });
 
@@ -31,11 +33,19 @@ export default function ListBlogs() {
   useEffect(() => {
     fetch(process.env.REACT_APP_BLOGSAPI)
       .then((blogs) => blogs.json())
-      .then((blogs) => setBlogsList(blogs));
+      .then((blogs) => setBlogsList(blogs))
+      .finally(()=>{
+        setLoading(false);
+      });
   }, []);
 
   return (
     <List>
+      {
+        Loading
+        ? <Loader />
+        : 
+      <>
       <Header>Bienvenid@ a mi #Blog </Header>
       {blogsList
         .slice(0)
@@ -52,6 +62,8 @@ export default function ListBlogs() {
             fileUrl={item.fileUrl}
           />
         ))}
+      </>
+      }
     </List>
   );
 }
