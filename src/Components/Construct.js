@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import build from '../assets/build.svg'
+import build from "../assets/build.svg";
 
 export default class Construct extends PureComponent {
   render() {
@@ -9,7 +9,9 @@ export default class Construct extends PureComponent {
       <NotFound>
         <Icon src={build} />
         <SubHeader>¡Hey... 🚧 Con cuidado!</SubHeader>
-        <Parrafo>Aun estamos construyendo este sitio 👷🏻‍♂️ Ve a un lugar seguro</Parrafo>
+        <Parrafo>
+          Aun estamos construyendo este sitio 👷🏻‍♂️ Ve a un lugar seguro
+        </Parrafo>
         <Link
           style={{ textDecoration: "none" }}
           classNameName="btnNotFound"
@@ -37,7 +39,7 @@ const Icon = styled.img`
   width: 100%;
   max-width: 700px;
   max-height: calc(100vh - 300px);
-`
+`;
 
 const SubHeader = styled.h2`
   text-align: center;

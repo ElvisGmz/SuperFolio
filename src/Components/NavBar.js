@@ -63,7 +63,11 @@ const NavBar = () => {
         <Link to="/" onClick={() => setToggleState(false)}>
           <div className="nav-header">
             <div className="nav-title">
-              <img src={logoNav} alt="" />
+              <img
+                src={logoNav}
+                title="Home Page Link"
+                alt="Link to Home Page"
+              />
             </div>
           </div>
         </Link>
@@ -93,7 +97,11 @@ const NavBar = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img src={gitHub} title="GitHub Menu Item" alt="Go to Elvis GitHub" />
+              <img
+                src={gitHub}
+                title="GitHub Menu Item"
+                alt="Go to Elvis GitHub"
+              />
             </a>
             <a
               href="https://ko-fi.com/elvisgmz/"
@@ -107,14 +115,22 @@ const NavBar = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img src={linkedIn} title="LinkedIn Menu Item" alt="Go to Elvis LinkedIn" />
+              <img
+                src={linkedIn}
+                title="LinkedIn Menu Item"
+                alt="Go to Elvis LinkedIn"
+              />
             </a>
             <a
               href="https://codepen.io/ElvisGmz_"
               target="_blank"
               rel="noreferrer"
             >
-              <img src={codepen} title="CodePen Menu Item" alt="Go to Elvis Codepen" />
+              <img
+                src={codepen}
+                title="CodePen Menu Item"
+                alt="Go to Elvis Codepen"
+              />
             </a>
           </Socials>
         </NavLinks>

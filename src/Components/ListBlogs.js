@@ -34,36 +34,35 @@ export default function ListBlogs() {
     fetch(process.env.REACT_APP_BLOGSAPI)
       .then((blogs) => blogs.json())
       .then((blogs) => setBlogsList(blogs))
-      .finally(()=>{
+      .finally(() => {
         setLoading(false);
       });
   }, []);
 
   return (
     <List>
-      {
-        Loading
-        ? <Loader />
-        : 
-      <>
-      <Header>Bienvenid@ a mi #Blog </Header>
-      {blogsList
-        .slice(0)
-        .reverse()
-        .map((item) => (
-          <BlogItem
-            key={item._id}
-            idBlog={item._id}
-            title={item.title}
-            bannerUrl={item.bannerUrl}
-            content={item.content}
-            author={item.author}
-            date={item.date}
-            fileUrl={item.fileUrl}
-          />
-        ))}
-      </>
-      }
+      {Loading ? (
+        <Loader />
+      ) : (
+        <>
+          <Header>Bienvenid@ a mi #Blog </Header>
+          {blogsList
+            .slice(0)
+            .reverse()
+            .map((item) => (
+              <BlogItem
+                key={item._id}
+                idBlog={item._id}
+                title={item.title}
+                bannerUrl={item.bannerUrl}
+                content={item.content}
+                author={item.author}
+                date={item.date}
+                fileUrl={item.fileUrl}
+              />
+            ))}
+        </>
+      )}
     </List>
   );
 }

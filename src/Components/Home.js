@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import photo from "../assets/profile.webp";
 import useDescription from "../hooks/useDescription";
@@ -102,8 +102,9 @@ function Home() {
     description: "Bienvenido a mi web, puedes leer blog, y otras cositas",
   });
 
-  useEffect(()=>{
-    console.log(`
+  useEffect(() => {
+    console.log(
+      `
     %c 
     ***Hello Sherlock Holmes || discover what is hidden behind my smile ♥***
     .... ...      ...                                                             . 
@@ -164,8 +165,10 @@ function Home() {
                               .,,,,,,,,***,,*,/#**********##************(***#
                              ..,.,,,,*,,,,*,**,*#********(******(#**********,
                              ...,,,,,,,,,,,,,**,,,***#********/***,******,,,,
-`, 'color: cyan')
-  }, [])
+`,
+      "color: cyan"
+    );
+  }, []);
 
   return (
     <>
