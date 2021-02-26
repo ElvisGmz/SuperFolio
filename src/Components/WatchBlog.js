@@ -128,7 +128,7 @@ const BlogView = styled.main`
 
   blockquote {
     background-color: #21212c;
-    border-left: 5px solid #00b0ff;
+    border-left: 5px solid #48cfff;
     color: #f0f0f0;
     padding: 1px 1rem;
     margin: 0;
@@ -147,7 +147,7 @@ const BlogView = styled.main`
   }
 
   a {
-    background-color: #00b0ff;
+    background-color: #48cfff;
     color: #fff;
     text-decoration: none;
     padding: 2px 5px;
