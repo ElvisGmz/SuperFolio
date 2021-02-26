@@ -23,6 +23,7 @@ const GlobalStyles = createGlobalStyle`
   html {
     width: 100vw;
     position: relative;
+    scrollbar-width: none;
   }
   
   body {
