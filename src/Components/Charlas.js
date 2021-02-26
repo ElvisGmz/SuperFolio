@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function Charlas() {
   return (
-    <>
+    <main>
       <Title>Charlitas en Comunidades 📢</Title>
       <Subtitle>
         Para recordar, repasar, o ponerte al dia que importa diviertete!
@@ -36,7 +36,7 @@ export default function Charlas() {
           allowfullscreen
         ></Frame>
       </VideoFrame>
-    </>
+    </main>
   );
 }
 

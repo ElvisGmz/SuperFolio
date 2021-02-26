@@ -5,7 +5,7 @@ import useDescription from "../hooks/useDescription";
 import styled from "styled-components";
 import BlogItem from "./BlogItem";
 
-const List = styled.div`
+const List = styled.main`
   display: flex;
   justify-content: center;
   align-items: stretch;

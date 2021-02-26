@@ -171,7 +171,7 @@ function Home() {
   }, []);
 
   return (
-    <>
+    <main>
       <Row>
         <Column>
           <Profile>
@@ -193,7 +193,7 @@ function Home() {
           </MeDescription>
         </Column>
       </Row>
-    </>
+    </main>
   );
 }
 
