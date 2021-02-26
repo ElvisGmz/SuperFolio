@@ -148,7 +148,7 @@ const BlogView = styled.main`
 
   a {
     background-color: #48cfff;
-    color: #fff;
+    color: #000;
     text-decoration: none;
     padding: 2px 5px;
     margin-top: 12px;
