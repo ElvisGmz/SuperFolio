@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import Loader from "../Components/Loader";
-import useTitle from "../hooks/useTitle";
-import useDescription from "../hooks/useDescription";
 import styled from "styled-components";
 import BlogItem from "./BlogItem";
 
@@ -24,12 +23,6 @@ export default function ListBlogs() {
   const [blogsList, setBlogsList] = useState([]);
   const [Loading, setLoading] = useState(true);
 
-  useTitle({ title: "Blog" });
-
-  useDescription({
-    description: "Un poco de lectura para fortalecer tus habilidades",
-  });
-
   useEffect(() => {
     fetch(process.env.REACT_APP_BLOGSAPI)
       .then((blogs) => blogs.json())
@@ -42,9 +35,22 @@ export default function ListBlogs() {
   return (
     <List>
       {Loading ? (
-        <Loader />
+        <>
+          <Helmet>
+            <title>Cargando...</title>
+          </Helmet>
+          <Loader />
+        </>
       ) : (
         <>
+          <Helmet>
+            <title>Elvis Gómez | Blog</title>
+            <meta name="description" content="Aprendamos en mi Blog" />
+            <meta
+              name="keywords"
+              content="blog, dev, web, front-end, JavaScript, react, code, elvisdev, elvisgmz, learning, backend, fullstack"
+            />
+          </Helmet>
           <Header>Bienvenid@ a mi #Blog </Header>
           {blogsList
             .slice(0)

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import Loader from "../Components/Loader";
-import useTitle from "../hooks/useTitle";
-import useDescription from "../hooks/useDescription";
+// import useTitle from "../hooks/useTitle";
+// import useDescription from "../hooks/useDescription";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import MarkdownView from "react-showdown";
@@ -11,8 +12,7 @@ const WatchBlog = () => {
   const [md, setMd] = useState();
   const [title, setTitle] = useState("Loading...");
   const [description, setDescription] = useState("Loading...");
-  useTitle({ title });
-  useDescription({ description });
+  const [banner, setBanner] = useState("");
 
   let id = useParams().id;
 
@@ -23,6 +23,7 @@ const WatchBlog = () => {
       .then((file) => {
         setTitle(file.title);
         setDescription(file.content);
+        setBanner(file.bannerUrl);
         getBlog(file.fileUrl);
       })
       .finally(() => {
@@ -39,9 +40,22 @@ const WatchBlog = () => {
   return (
     <>
       {Loading ? (
-        <Loader />
+        <>
+          <Helmet>
+            <title>Cargando...</title>
+          </Helmet>
+          <Loader />
+        </>
       ) : (
         <BlogView>
+          <Helmet>
+            <title>{title}</title>
+            <meta name="description" content={description} />
+            <meta
+              property="og:image"
+              content={banner}
+            />
+          </Helmet>
           <MarkdownView markdown={md} />
         </BlogView>
       )}
