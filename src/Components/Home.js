@@ -49,10 +49,10 @@ const HeadHero = styled.h1`
 const SubHero = styled.h2`
   font-size: 12px;
   background-color: #2b2b38;
-  color: dodgerblue;
+  color: #48cfff;
   padding: 0.3rem 0.7rem;
   margin-bottom: 0;
-  border-top: 2px solid dodgerblue;
+  border-top: 2px solid #48cfff;
   z-index: 1000;
 `;
 
