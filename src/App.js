@@ -12,6 +12,7 @@ const NotFound = lazy(() => import("./Components/NotFound"));
 const WatchBlog = lazy(() => import("./Components/WatchBlog"));
 const Construct = lazy(() => import("./Components/Construct.js"));
 
+
 function App() {
   return (
     <Router>
