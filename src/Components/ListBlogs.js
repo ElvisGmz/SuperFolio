@@ -44,8 +44,36 @@ export default function ListBlogs() {
       ) : (
         <>
           <Helmet>
-            <title>Elvis Gómez | Blog</title>
-            <meta name="description" content="Aprendamos en mi Blog" />
+            <title>Elvis Gomez | Blog</title>
+            <meta name="title" content="Elvis Gomez | Blog" />
+            <meta
+              name="description"
+              content="Ya sea para aprender, solucionar o simplemente leer. Cual sea tu motivo no te arrepentiras de entrar al mundo del desarrollo en este blog"
+            />
+
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://metatags.io/" />
+            <meta property="og:title" content="Elvis Gomez | Blog" />
+            <meta
+              property="og:description"
+              content="Ya sea para aprender, solucionar o simplemente leer. Cual sea tu motivo no te arrepentiras de entrar al mundo del desarrollo en este blog"
+            />
+            <meta
+              property="og:image"
+              content="https://res.cloudinary.com/superfolio/image/upload/v1614892317/blogsmd/58f6a01695be445d0e40b92f33a0c8b5_wzczdw.webp"
+            />
+
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:url" content="https://metatags.io/" />
+            <meta property="twitter:title" content="Elvis Gomez | Blog" />
+            <meta
+              property="twitter:description"
+              content="Ya sea para aprender, solucionar o simplemente leer. Cual sea tu motivo no te arrepentiras de entrar al mundo del desarrollo en este blog"
+            />
+            <meta
+              property="twitter:image"
+              content="https://res.cloudinary.com/superfolio/image/upload/v1614892317/blogsmd/58f6a01695be445d0e40b92f33a0c8b5_wzczdw.webp"
+            />
             <meta
               name="keywords"
               content="blog, dev, web, front-end, JavaScript, react, code, elvisdev, elvisgmz, learning, backend, fullstack"
