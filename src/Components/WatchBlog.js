@@ -66,7 +66,8 @@ const WatchBlog = () => {
 export default WatchBlog;
 
 const BlogView = styled.main`
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Rubik', sans-serif;
   width: 100%;
   max-width: 768px;
   margin: 1rem auto 2.5rem;
