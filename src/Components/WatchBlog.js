@@ -51,10 +51,7 @@ const WatchBlog = () => {
           <Helmet>
             <title>{title}</title>
             <meta name="description" content={description} />
-            <meta
-              property="og:image"
-              content={banner}
-            />
+            <meta property="og:image" content={banner} />
           </Helmet>
           <MarkdownView markdown={md} />
         </BlogView>
@@ -67,7 +64,7 @@ export default WatchBlog;
 
 const BlogView = styled.main`
   /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   width: 100%;
   max-width: 768px;
   margin: 1rem auto 2.5rem;

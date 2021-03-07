@@ -3,11 +3,11 @@ import { createGlobalStyle } from "styled-components";
 import { lazy } from "@loadable/component";
 import ReactDOM from "react-dom";
 import Loader from "./Components/Loader";
-import RubikFont from "./fonts/Rubik-VariableFont_wght.ttf"
+import RubikFont from "./fonts/Rubik-VariableFont_wght.ttf";
 
 const App = lazy(() => import("./App"));
-  
-  const GlobalStyles = createGlobalStyle`
+
+const GlobalStyles = createGlobalStyle`
   
   @font-face {
     font-family: "Rubik";
@@ -35,7 +35,7 @@ const App = lazy(() => import("./App"));
     /* font-family: "Montserrat", sans-serif; */
     /* font-family: 'Raleway', sans-serif; */
     font-family: 'Rubik', sans-serif;
-    background-color: #1b1e1e;
+    background-color: #21212c;
     color: #fff;
     }
     
@@ -48,14 +48,12 @@ const App = lazy(() => import("./App"));
     }
   `;
 
-
 ReactDOM.render(
   // <React.StrictMode>
-    <Suspense fallback={<Loader />}>
-      <GlobalStyles />
-      <App />
-    </Suspense>
+  <Suspense fallback={<Loader />}>
+    <GlobalStyles />
+    <App />
+  </Suspense>,
   // </React.StrictMode>,
-  ,
   document.getElementById("root")
 );
